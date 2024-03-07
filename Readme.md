@@ -1,5 +1,9 @@
 # Some test data for arm64 disassemblers
 
+> To avoid using git LFS, the repo has the test set in a compressed form.
+> To decompress the data, run the [prepare-once.py](./prepare-once.py)
+> script.
+
 To install the tools that generate the binary files:
 
 ```sh
