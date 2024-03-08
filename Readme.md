@@ -135,7 +135,7 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 | `ldstpair_indexed` | 11776/393216 | 11776/393216 | `` |
 | `ldstpair_off` | 2048/393216 | 2048/393216 | `` |
 | `loadlit` | **0**/262144 | **0**/262144 | `` |
-| `log_imm` | **0**/262144 | 262144/262144 | `limm` |
+| `log_imm` | **0**/262144 | **0**/262144 | `` |
 | `log_shift` | **0**/524288 | **0**/524288 | `` |
 | `lse128_atomic` | 24192/393216 | **0**/393216 | `` |
 | `lse_atomic` | 42240/5572608 | **0**/5572608 | `` |
