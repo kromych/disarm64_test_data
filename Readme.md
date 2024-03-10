@@ -98,9 +98,9 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 | `branch_reg` | **0**/4326 | **0**/4326 | `` |
 | `compbranch` | **0**/131072 | **0**/131072 | `` |
 | `condbranch` | **0**/131072 | **0**/131072 | `` |
-| `condcmp_imm` | 16384/131072 | 131072/131072 | `ccmp_imm`, `cond`, `nzcv` |
-| `condcmp_reg` | 16384/131072 | 131072/131072 | `cond`, `nzcv` |
-| `condsel` | 32768/262144 | 262144/262144 | `cond` |
+| `condcmp_imm` | 16384/131072 | **0**/131072 | `` |
+| `condcmp_reg` | 16384/131072 | **0**/131072 | `` |
+| `condsel` | 32768/262144 | 5376/262144 | `` |
 | `cryptoaes` | **0**/4096 | 4096/4096 | `vd`, `vn` |
 | `cryptosha2` | **0**/102400 | 102400/102400 | `fd`, `fn`, `vd`, `vm`, `vn` |
 | `cryptosha3` | **0**/458752 | 458752/458752 | `fd`, `fn`, `imm`, `va`, `vd`, `vm`, `vn` |
@@ -115,13 +115,13 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 | `extract` | **0**/41728 | **0**/41728 | `` |
 | `float2fix` | **0**/524288 | 524288/524288 | `fbits`, `fd`, `fn` |
 | `float2int` | **0**/146432 | 146432/146432 | `fd`, `fn`, `vdd1`, `vnd1` |
-| `floatccmp` | 28672/262144 | 262144/262144 | `cond`, `fm`, `fn`, `nzcv` |
+| `floatccmp` | 28672/262144 | 262144/262144 | `fm`, `fn` |
 | `floatcmp` | **0**/20480 | 20480/20480 | `fm`, `fn`, `fpimm0` |
 | `floatdp1` | **0**/80896 | 80896/80896 | `fd`, `fn` |
 | `floatdp2` | **0**/884736 | 884736/884736 | `fd`, `fm`, `fn` |
 | `floatdp3` | **0**/524288 | 524288/524288 | `fa`, `fd`, `fm`, `fn` |
 | `floatimm` | **0**/40960 | 40960/40960 | `fd`, `fpimm` |
-| `floatsel` | 14336/131072 | 131072/131072 | `cond`, `fd`, `fm`, `fn` |
+| `floatsel` | 14336/131072 | 131072/131072 | `fd`, `fm`, `fn` |
 | `gcs` | **0**/2180 | **0**/2180 | `` |
 | `ic_system` | 1967/492872 | 492775/492872 | `barrier`, `barrier_dsb_nxs`, `barrier_isb`, `crm`, `crn`, `imm_2`, `mask`, `pstatefield`, `sme_sm_za`, `sysreg128`, `sysreg`, `uimm3_op1`, `uimm3_op2`, `uimm4`, `uimm7` |
 | `ldst_imm10` | 64/131072 | **0**/131072 | `` |
