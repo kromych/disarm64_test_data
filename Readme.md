@@ -93,7 +93,7 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 | `asisdsame` | **0**/1933312 | 1933312/1933312 | `sd`, `sm`, `sn` |
 | `asisdshf` | **0**/1835008 | 1835008/1835008 | `imm_vlsl`, `imm_vlsr`, `sd`, `sn` |
 | `bfloat16` | **0**/297984 | 297984/297984 | `em16`, `fd`, `fn`, `vd`, `vm`, `vn` |
-| `bitfield` | **0**/196608 | 196608/196608 | `immr`, `imms` |
+| `bitfield` | **0**/196608 | 50988/196608 | `` |
 | `branch_imm` | **0**/131072 | **0**/131072 | `` |
 | `branch_reg` | **0**/4326 | **0**/4326 | `` |
 | `compbranch` | **0**/131072 | **0**/131072 | `` |
@@ -112,7 +112,7 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 | `dp_2src` | 1024/819200 | 264192/819200 | `` |
 | `dp_3src` | **0**/458752 | 12288/458752 | `` |
 | `exception` | **0**/589824 | **0**/589824 | `` |
-| `extract` | **0**/65536 | 65536/65536 | `imms` |
+| `extract` | **0**/41728 | **0**/41728 | `` |
 | `float2fix` | **0**/524288 | 524288/524288 | `fbits`, `fd`, `fn` |
 | `float2int` | **0**/146432 | 146432/146432 | `fd`, `fn`, `vdd1`, `vnd1` |
 | `floatccmp` | 28672/262144 | 262144/262144 | `cond`, `fm`, `fn`, `nzcv` |

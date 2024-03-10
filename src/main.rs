@@ -243,6 +243,80 @@ fn main() -> io::Result<()> {
                 operands.replace(", xzr, ", ", ")
             );
             continue;
+        } else if mnemonic == "sbfm" {
+            let rd = &tokens[3][..tokens[3].len() - 1];
+            let rn = &tokens[4][..tokens[4].len() - 1];
+            let immr = &tokens[5][1..tokens[5].len() - 1];
+            let imms = &tokens[6][1..];
+
+            let immr = if let Ok(immr) = u64::from_str_radix(immr, 10) {
+                Some(immr)
+            } else if let Ok(immr) = u64::from_str_radix(&immr[2..], 16) {
+                Some(immr)
+            } else {
+                None
+            };
+            let imms = if let Ok(imms) = u64::from_str_radix(imms, 10) {
+                Some(imms)
+            } else if let Ok(imms) = u64::from_str_radix(&imms[2..], 16) {
+                Some(imms)
+            } else {
+                None
+            };
+
+            if immr.is_some() && imms.is_some() {
+                /*
+                   Aliases for `sbfm Rd, Rn, #immr, #imms``:
+
+                   ASR (immediate)	32-bit	imms == '011111'
+                   ASR (immediate)	64-bit	imms == '111111'
+                   SBFIZ		UInt(imms) < UInt(immr)
+                   SBFX		BFXPreferred(sf, opc<1>, imms, immr)
+                   SXTB		immr == '000000' && imms == '0b000111'
+                   SXTH		immr == '000000' && imms == '0b001111'
+                   SXTW		immr == '000000' && imms == '0b011111'
+                */
+
+                let immr = immr.unwrap();
+                let imms = imms.unwrap();
+                if imms < immr {
+                    let imms = imms + 1;
+                    let immr = if rd.starts_with('w') {
+                        0x20 - immr
+                    } else {
+                        0x40 - immr
+                    };
+                    println!(
+                        "{opcode:14}{:16}{rd}, {rn}, #{immr:#x}, #{imms:#x}",
+                        "sbfiz"
+                    );
+                    continue;
+                } else if rd.starts_with('x') && imms == 0b111111
+                    || rd.starts_with('w') && imms == 0b11111
+                {
+                    println!("{opcode:14}{:16}{rd}, {rn}, #{immr:#x}", "asr");
+                    continue;
+                } else if immr == 0 && imms == 0b111 {
+                    println!("{opcode:14}{:16}{rd}, {}", "sxtb", rn.replace('x', "w"));
+                    continue;
+                } else if immr == 0 && imms == 0b1111 {
+                    println!("{opcode:14}{:16}{rd}, {}", "sxth", rn.replace('x', "w"));
+                    continue;
+                } else if immr == 0 && imms == 0b11111 {
+                    println!("{opcode:14}{:16}{rd}, {}", "sxtw", rn.replace('x', "w"));
+                    continue;
+                }
+            }
+        } else if mnemonic == "extr" {
+            if tokens[4] == tokens[5] {
+                println!(
+                    "{:14}{:16}{}",
+                    opcode,
+                    "ror",
+                    operands.replace(format!("{} {}", tokens[4], tokens[5]).as_str(), tokens[4])
+                );
+            }
+            continue;
         }
 
         if mnemonic.starts_with("dcps") {
