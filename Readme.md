@@ -56,7 +56,7 @@ For the list of categories and number of encodings in the test set, please see t
 ## Notes
 
 - For `diff`-ing, the GNU diff is assumed.
-- If you hae an IDE/text editor scanning for changes in this directory constantly,computing diff's might be slower.
+- If you hae an IDE/text editor scanning for changes in this directory constantly, computing diff's might be slower.
 
 ## Statistics on diff's
 
@@ -123,7 +123,7 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 | `floatimm` | **0**/40960 | 40960/40960 | `fd`, `fpimm` |
 | `floatsel` | 14336/131072 | 131072/131072 | `fd`, `fm`, `fn` |
 | `gcs` | **0**/2180 | **0**/2180 | `` |
-| `ic_system` | 1967/492872 | 492775/492872 | `barrier`, `barrier_dsb_nxs`, `barrier_isb`, `crm`, `crn`, `imm_2`, `mask`, `pstatefield`, `sme_sm_za`, `sysreg128`, `sysreg`, `uimm3_op1`, `uimm3_op2`, `uimm4`, `uimm7` |
+| `ic_system` | 1967/492872 | 2702/492872 | `sme_sm_za` |
 | `ldst_imm10` | 64/131072 | **0**/131072 | `` |
 | `ldst_imm9` | **0**/983040 | **0**/983040 | `` |
 | `ldst_pos` | **0**/786432 | **0**/786432 | `` |
@@ -180,5 +180,5 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 | `sve_size_sd` | **0**/724992 | 722944/724992 | `sve_addr_zz_lsl`, `sve_imm_rot2`, `sve_pg3`, `sve_zd`, `sve_zm_16`, `sve_zm_5`, `sve_zn` |
 | `sve_size_sd2` | 4096/131072 | 131072/131072 | `sve_addr_zx`, `sve_pg3`, `sve_ztxn` |
 | `sve_size_tsz_bhs` | **0**/49152 | 49152/49152 | `sve_zd`, `sve_zn` |
-| `testbranch` | **0**/131072 | 131072/131072 | `bit_num` |
+| `testbranch` | **0**/131072 | **0**/131072 | `` |
 | `the` | 48384/2097152 | **0**/2097152 | `` |
