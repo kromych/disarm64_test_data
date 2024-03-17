@@ -1,1 +1,1 @@
-barrier,barrier_dsb_nxs,barrier_isb,crm,crn,imm_2,mask,pstatefield,sme_sm_za,sysreg128,sysreg,uimm3_op1,uimm3_op2,uimm4,uimm7
+pstatefield,sme_sm_za
