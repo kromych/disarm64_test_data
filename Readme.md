@@ -65,7 +65,7 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 
 | Category | LLVM vs binutils | disarm64 vs binutils | Implement formatting for |
 |----------|-----------------:|---------------------:|--------------------------|
-| `aarch64_misc` | 111600/4161603 | 4161536/4161603 | `mops_addr_rd`, `mops_addr_rs`, `mops_wb_rn`, `tme_uimm16`, `vd`, `vm`, `vn` |
+| `aarch64_misc` | 111600/4161603 | 163840/4161603 | `vd`, `vm`, `vn` |
 | `addsub_carry` | **0**/262144 | **0**/262144 | `` |
 | `addsub_ext` | **0**/262144 | **0**/262144 | `` |
 | `addsub_imm` | 12288/393216 | **0**/393216 | `` |
