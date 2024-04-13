@@ -65,22 +65,22 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 
 | Category | LLVM vs binutils | disarm64 vs binutils | Implement formatting for |
 |----------|-----------------:|---------------------:|--------------------------|
-| `aarch64_misc` | 111600/4161603 | 163840/4161603 | `vd`, `vm`, `vn` |
+| `aarch64_misc` | 111600/4161603 | **0**/4161603 | `` |
 | `addsub_carry` | **0**/262144 | **0**/262144 | `` |
 | `addsub_ext` | **0**/262144 | **0**/262144 | `` |
 | `addsub_imm` | 12288/393216 | **0**/393216 | `` |
 | `addsub_shift` | **0**/262144 | **0**/262144 | `` |
-| `asimdall` | **0**/81920 | 81920/81920 | `fd`, `vn` |
-| `asimddiff` | **0**/3407872 | 3407872/3407872 | `vd`, `vm`, `vn` |
-| `asimdelem` | **0**/2752512 | 2752512/2752512 | `em16`, `em`, `imm_rot2`, `vd`, `vn` |
-| `asimdext` | **0**/65536 | 65536/65536 | `idx`, `vd`, `vm`, `vn` |
-| `asimdimm` | **0**/532480 | 532480/532480 | `sd`, `simd_imm`, `simd_imm_sft`, `vd` |
-| `asimdins` | **0**/360448 | 360448/360448 | `ed`, `en`, `vd` |
-| `asimdmisc` | **0**/430080 | 430080/430080 | `shll_imm`, `vd`, `vn` |
-| `asimdperm` | **0**/393216 | 393216/393216 | `vd`, `vm`, `vn` |
-| `asimdsame` | 262144/7536640 | 7536640/7536640 | `imm_rot1`, `imm_rot3`, `sd`, `sm`, `sn`, `vd`, `vm`, `vn` |
-| `asimdshf` | 6144/2752512 | 2752512/2752512 | `imm_vlsl`, `imm_vlsr`, `sd`, `simd_imm`, `simd_imm_sft`, `vd`, `vn` |
-| `asimdtbl` | **0**/131072 | 131072/131072 | `lvn`, `vd`, `vm` |
+| `asimdall` | **0**/81920 | 55296/81920 | `` |
+| `asimddiff` | **0**/3407872 | 2473984/3407872 | `` |
+| `asimdelem` | **0**/2752512 | 2457600/2752512 | `em16`, `em`, `imm_rot2` |
+| `asimdext` | **0**/65536 | 65536/65536 | `idx` |
+| `asimdimm` | **0**/532480 | 532352/532480 | `sd`, `simd_imm`, `simd_imm_sft` |
+| `asimdins` | **0**/360448 | 344064/360448 | `ed`, `en` |
+| `asimdmisc` | **0**/430080 | 238592/430080 | `shll_imm` |
+| `asimdperm` | **0**/393216 | 294912/393216 | `` |
+| `asimdsame` | 262144/7536640 | 3360768/7536640 | `imm_rot1`, `imm_rot3`, `sd`, `sm`, `sn` |
+| `asimdshf` | 6144/2752512 | 2752496/2752512 | `imm_vlsl`, `imm_vlsr`, `sd`, `simd_imm`, `simd_imm_sft` |
+| `asimdtbl` | **0**/131072 | 131072/131072 | `lvn` |
 | `asisddiff` | **0**/196608 | 196608/196608 | `sd`, `sm`, `sn` |
 | `asisdelem` | **0**/983040 | 983040/983040 | `em16`, `em`, `sd`, `sn` |
 | `asisdlse` | **0**/524288 | 524288/524288 | `lvt` |
@@ -89,10 +89,10 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 | `asisdlsop` | **0**/786432 | 786432/786432 | `let`, `lvt_al`, `simd_addr_post` |
 | `asisdmisc` | **0**/120832 | 120832/120832 | `sd`, `sn` |
 | `asisdone` | **0**/32768 | 32768/32768 | `en`, `sd` |
-| `asisdpair` | **0**/19456 | 19456/19456 | `sd`, `vn` |
+| `asisdpair` | **0**/19456 | 16384/19456 | `sd` |
 | `asisdsame` | **0**/1933312 | 1933312/1933312 | `sd`, `sm`, `sn` |
 | `asisdshf` | **0**/1835008 | 1835008/1835008 | `imm_vlsl`, `imm_vlsr`, `sd`, `sn` |
-| `bfloat16` | **0**/297984 | 296960/297984 | `em16`, `vd`, `vm`, `vn` |
+| `bfloat16` | **0**/297984 | 163840/297984 | `em16` |
 | `bitfield` | **0**/196608 | 50988/196608 | `` |
 | `branch_imm` | **0**/131072 | **0**/131072 | `` |
 | `branch_reg` | **0**/4326 | **0**/4326 | `` |
@@ -101,13 +101,13 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 | `condcmp_imm` | 16384/131072 | **0**/131072 | `` |
 | `condcmp_reg` | 16384/131072 | **0**/131072 | `` |
 | `condsel` | 32768/262144 | 5376/262144 | `` |
-| `cryptoaes` | **0**/4096 | 4096/4096 | `vd`, `vn` |
-| `cryptosha2` | **0**/102400 | 102400/102400 | `fd`, `fn`, `vd`, `vm`, `vn` |
-| `cryptosha3` | **0**/458752 | 458752/458752 | `fd`, `fn`, `imm`, `va`, `vd`, `vm`, `vn` |
-| `cryptosm3` | **0**/393216 | 393216/393216 | `em`, `va`, `vd`, `vm`, `vn` |
-| `cryptosm4` | **0**/33792 | 33792/33792 | `vd`, `vm`, `vn` |
+| `cryptoaes` | **0**/4096 | **0**/4096 | `` |
+| `cryptosha2` | **0**/102400 | **0**/102400 | `` |
+| `cryptosha3` | **0**/458752 | 65536/458752 | `imm` |
+| `cryptosm3` | **0**/393216 | 262144/393216 | `em` |
+| `cryptosm4` | **0**/33792 | **0**/33792 | `` |
 | `cssc` | **0**/530432 | **0**/530432 | `` |
-| `dotproduct` | **0**/458752 | 458752/458752 | `em`, `vd`, `vm`, `vn` |
+| `dotproduct` | **0**/458752 | 425984/458752 | `em` |
 | `dp_1src` | **0**/19776 | **0**/19776 | `` |
 | `dp_2src` | 1024/819200 | 264192/819200 | `` |
 | `dp_3src` | **0**/458752 | 12288/458752 | `` |
@@ -141,7 +141,7 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 | `lse_atomic` | 42240/5572608 | **0**/5572608 | `` |
 | `movewide` | 16383/196608 | **0**/196608 | `` |
 | `pcreladdr` | **0**/131072 | **0**/131072 | `` |
-| `rcpc3` | 176137/274432 | 274432/274432 | `ft`, `let`, `rcpc3_addr_offset`, `rcpc3_addr_opt_postind`, `rcpc3_addr_opt_preind_wb`, `rcpc3_addr_postind`, `rcpc3_addr_preind_wb` |
+| `rcpc3` | 176137/274432 | 274432/274432 | `let`, `rcpc3_addr_offset`, `rcpc3_addr_opt_postind`, `rcpc3_addr_opt_preind_wb`, `rcpc3_addr_postind`, `rcpc3_addr_preind_wb` |
 | `sme2_mov` | **0**/3072 | 3072/3072 | `sme_za_array_off3_0`, `sme_za_array_off3_5`, `sme_zdnx2`, `sme_zdnx4`, `sme_znx2`, `sme_znx4` |
 | `sme2_movaz` | 5376/5376 | 5376/5376 | `sme_za_array_vrsb_1`, `sme_za_array_vrsb_2`, `sme_za_array_vrsd_1`, `sme_za_array_vrsd_2`, `sme_za_array_vrsh_1`, `sme_za_array_vrsh_2`, `sme_za_array_vrss_1`, `sme_za_array_vrss_2`, `sme_zdnx2`, `sme_zdnx4` |
 | `sme_fp_sd` | 30720/175104 | 175104/175104 | `sme_za_array_off3_0`, `sme_zm`, `sme_zmx2`, `sme_zmx4`, `sme_znx2`, `sme_znx4`, `sve_znxn` |
@@ -159,7 +159,7 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 | `sme_stop` | **0**/9 | 7/9 | `sme_sm_za` |
 | `sme_str` | **0**/2048 | 2048/2048 | `sme_addr_ri_u4xvl`, `sme_za_array_off4` |
 | `sme_sz_23` | **0**/3072 | 3072/3072 | `sme_znx4`, `sve_zd` |
-| `sve2_urqvs` | **0**/393216 | 393216/393216 | `sve_pg3`, `sve_zn`, `vd` |
+| `sve2_urqvs` | **0**/393216 | 393216/393216 | `sve_pg3`, `sve_zn` |
 | `sve_cpy` | 20512/65536 | 65536/65536 | `sve_asimm`, `sve_pg4_16`, `sve_zd` |
 | `sve_index` | **0**/65536 | 65536/65536 | `sve_zd`, `sve_zn_index` |
 | `sve_index1` | 30720/32768 | 32768/32768 | `sve_zd`, `sve_zn_5_index` |
@@ -181,4 +181,4 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 | `sve_size_sd2` | 4096/131072 | 131072/131072 | `sve_addr_zx`, `sve_pg3`, `sve_ztxn` |
 | `sve_size_tsz_bhs` | **0**/49152 | 49152/49152 | `sve_zd`, `sve_zn` |
 | `testbranch` | **0**/131072 | **0**/131072 | `` |
-| `the` | 48384/2097152 | **0**/2097152 |
+| `the` | 48384/2097152 | **0**/2097152 | `` |
