@@ -74,24 +74,24 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 | `asimddiff` | **0**/3407872 | 2473984/3407872 | `` |
 | `asimdelem` | **0**/2752512 | 2457600/2752512 | `em16`, `em`, `imm_rot2` |
 | `asimdext` | **0**/65536 | 65536/65536 | `idx` |
-| `asimdimm` | **0**/532480 | 532352/532480 | `sd`, `simd_imm`, `simd_imm_sft` |
+| `asimdimm` | **0**/532480 | **0**/532480 | `` |
 | `asimdins` | **0**/360448 | 344064/360448 | `ed`, `en` |
 | `asimdmisc` | **0**/430080 | 238592/430080 | `shll_imm` |
 | `asimdperm` | **0**/393216 | 294912/393216 | `` |
-| `asimdsame` | 262144/7536640 | 3360768/7536640 | `imm_rot1`, `imm_rot3`, `sd`, `sm`, `sn` |
-| `asimdshf` | 6144/2752512 | 2752496/2752512 | `imm_vlsl`, `imm_vlsr`, `sd`, `simd_imm`, `simd_imm_sft` |
+| `asimdsame` | 262144/7536640 | 3328000/7536640 | `imm_rot1`, `imm_rot3` |
+| `asimdshf` | 6144/2752512 | 2633728/2752512 | `imm_vlsl`, `imm_vlsr` |
 | `asimdtbl` | **0**/131072 | 131072/131072 | `lvn` |
-| `asisddiff` | **0**/196608 | 196608/196608 | `sd`, `sm`, `sn` |
-| `asisdelem` | **0**/983040 | 983040/983040 | `em16`, `em`, `sd`, `sn` |
+| `asisddiff` | **0**/196608 | 147456/196608 | `` |
+| `asisdelem` | **0**/983040 | 983040/983040 | `em16`, `em` |
 | `asisdlse` | **0**/524288 | 524288/524288 | `lvt` |
 | `asisdlsep` | **0**/524288 | 524288/524288 | `lvt`, `simd_addr_post` |
 | `asisdlso` | **0**/557056 | 557056/557056 | `let`, `lvt_al` |
 | `asisdlsop` | **0**/786432 | 786432/786432 | `let`, `lvt_al`, `simd_addr_post` |
-| `asisdmisc` | **0**/120832 | 120832/120832 | `sd`, `sn` |
-| `asisdone` | **0**/32768 | 32768/32768 | `en`, `sd` |
-| `asisdpair` | **0**/19456 | 16384/19456 | `sd` |
-| `asisdsame` | **0**/1933312 | 1933312/1933312 | `sd`, `sm`, `sn` |
-| `asisdshf` | **0**/1835008 | 1835008/1835008 | `imm_vlsl`, `imm_vlsr`, `sd`, `sn` |
+| `asisdmisc` | **0**/120832 | 64512/120832 | `` |
+| `asisdone` | **0**/32768 | 32768/32768 | `en` |
+| `asisdpair` | **0**/19456 | 18432/19456 | `` |
+| `asisdsame` | **0**/1933312 | 786432/1933312 | `` |
+| `asisdshf` | **0**/1835008 | 1835008/1835008 | `imm_vlsl`, `imm_vlsr` |
 | `bfloat16` | **0**/297984 | 163840/297984 | `em16` |
 | `bitfield` | **0**/196608 | 50988/196608 | `` |
 | `branch_imm` | **0**/131072 | **0**/131072 | `` |
@@ -173,9 +173,9 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 | `sve_shift_unpred` | **0**/196608 | 196608/196608 | `sve_shlimm_unpred`, `sve_shrimm_unpred`, `sve_zd`, `sve_zn` |
 | `sve_size_13` | **0**/131072 | 131072/131072 | `sve_zd`, `sve_zm_16`, `sve_zn` |
 | `sve_size_bh` | **0**/131072 | 131072/131072 | `sve_pd`, `sve_pg3`, `sve_zm_16`, `sve_zn` |
-| `sve_size_bhs` | **0**/983040 | 983040/983040 | `sve_pd`, `sve_pg3`, `sve_vd`, `sve_zd`, `sve_zm_16`, `sve_zm_5`, `sve_zn` |
-| `sve_size_bhsd` | 20512/8710144 | 8710144/8710144 | `simm5`, `sve_aimm`, `sve_asimm`, `sve_imm_rot2`, `sve_imm_rot3`, `sve_pattern`, `sve_pd`, `sve_pg3`, `sve_pg4_10`, `sve_pg4_5`, `sve_pm`, `sve_pn`, `sve_simm5`, `sve_simm5b`, `sve_simm8`, `sve_uimm7`, `sve_uimm8`, `sve_vd`, `sve_vm`, `sve_vn`, `sve_za_5`, `sve_zd`, `sve_zm_16`, `sve_zm_5`, `sve_zn`, `sve_znxn` |
-| `sve_size_hsd` | **0**/6774784 | 6774784/6774784 | `imm_rot2`, `sve_i1_half_one`, `sve_i1_half_two`, `sve_i1_zero_one`, `sve_imm_rot1`, `sve_pd`, `sve_pg3`, `sve_pg4_16`, `sve_pg4_5`, `sve_uimm3`, `sve_vd`, `sve_za_16`, `sve_zd`, `sve_zm_16`, `sve_zm_5`, `sve_zn` |
+| `sve_size_bhs` | **0**/983040 | 974848/983040 | `sve_pd`, `sve_pg3`, `sve_zd`, `sve_zm_16`, `sve_zm_5`, `sve_zn` |
+| `sve_size_bhsd` | 20512/8710144 | 8710144/8710144 | `simm5`, `sve_aimm`, `sve_asimm`, `sve_imm_rot2`, `sve_imm_rot3`, `sve_pattern`, `sve_pd`, `sve_pg3`, `sve_pg4_10`, `sve_pg4_5`, `sve_pm`, `sve_pn`, `sve_simm5`, `sve_simm5b`, `sve_simm8`, `sve_uimm7`, `sve_uimm8`, `sve_za_5`, `sve_zd`, `sve_zm_16`, `sve_zm_5`, `sve_zn`, `sve_znxn` |
+| `sve_size_hsd` | **0**/6774784 | 6725632/6774784 | `imm_rot2`, `sve_fpimm8`, `sve_i1_half_one`, `sve_i1_half_two`, `sve_i1_zero_one`, `sve_imm_rot1`, `sve_pd`, `sve_pg3`, `sve_pg4_16`, `sve_pg4_5`, `sve_uimm3`, `sve_za_16`, `sve_zd`, `sve_zm_16`, `sve_zm_5`, `sve_zn` |
 | `sve_size_hsd2` | **0**/32768 | 32768/32768 | `sve_pg3`, `sve_zd`, `sve_zn` |
 | `sve_size_sd` | **0**/724992 | 722944/724992 | `sve_addr_zz_lsl`, `sve_imm_rot2`, `sve_pg3`, `sve_zd`, `sve_zm_16`, `sve_zm_5`, `sve_zn` |
 | `sve_size_sd2` | 4096/131072 | 131072/131072 | `sve_addr_zx`, `sve_pg3`, `sve_ztxn` |

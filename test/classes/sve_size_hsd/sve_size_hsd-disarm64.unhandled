@@ -1,1 +1,1 @@
-imm_rot2,sve_i1_half_one,sve_i1_half_two,sve_i1_zero_one,sve_imm_rot1,sve_pd,sve_pg3,sve_pg4_16,sve_pg4_5,sve_uimm3,sve_vd,sve_za_16,sve_zd,sve_zm_16,sve_zm_5,sve_zn
+imm_rot2,sve_fpimm8,sve_i1_half_one,sve_i1_half_two,sve_i1_zero_one,sve_imm_rot1,sve_pd,sve_pg3,sve_pg4_16,sve_pg4_5,sve_uimm3,sve_za_16,sve_zd,sve_zm_16,sve_zm_5,sve_zn
