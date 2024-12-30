@@ -123,7 +123,7 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 | `floatimm` | **0**/40960 | **0**/40960 | `` |
 | `floatsel` | 14336/131072 | **0**/131072 | `` |
 | `gcs` | **0**/2180 | **0**/2180 | `` |
-| `ic_system` | 1967/492872 | 2702/492872 | `sme_sm_za` |
+| `ic_system` | 1967/492872 | 2696/492872 | `sme_sm_za` |
 | `ldst_imm10` | 64/131072 | **0**/131072 | `` |
 | `ldst_imm9` | **0**/983040 | **0**/983040 | `` |
 | `ldst_pos` | **0**/786432 | **0**/786432 | `` |
