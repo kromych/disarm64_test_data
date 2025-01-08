@@ -70,8 +70,8 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 | `addsub_ext` | **0**/262144 | **0**/262144 | `` |
 | `addsub_imm` | 12288/393216 | **0**/393216 | `` |
 | `addsub_shift` | **0**/262144 | **0**/262144 | `` |
-| `asimdall` | **0**/81920 | 55296/81920 | `` |
-| `asimddiff` | **0**/3407872 | 2473984/3407872 | `` |
+| `asimdall` | **0**/81920 | 16384/81920 | `` |
+| `asimddiff` | **0**/3407872 | 950272/3407872 | `` |
 | `asimdelem` | **0**/2752512 | 2457600/2752512 | `em16`, `em`, `imm_rot2` |
 | `asimdext` | **0**/65536 | 65536/65536 | `idx` |
 | `asimdimm` | **0**/532480 | **0**/532480 | `` |
