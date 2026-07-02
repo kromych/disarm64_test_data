@@ -122,7 +122,7 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 | `floatdp3` | **0**/524288 | **0**/524288 | `` |
 | `floatimm` | **0**/40960 | **0**/40960 | `` |
 | `floatsel` | 14336/131072 | **0**/131072 | `` |
-| `gcs` | **0**/2180 | **0**/2180 | `` |
+| `gcs` | **0**/2180 | 2048/2180 | `` |
 | `ic_system` | 1967/492872 | 2696/492872 | `sme_sm_za` |
 | `ldst_imm10` | 64/131072 | **0**/131072 | `` |
 | `ldst_imm9` | **0**/983040 | **0**/983040 | `` |
@@ -149,7 +149,7 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 | `sme_ldr` | **0**/2048 | 2048/2048 | `sme_addr_ri_u4xvl`, `sme_za_array_off4` |
 | `sme_misc` | 2334884/5654465 | 5588929/5654465 | `sme_list_of_64bit_tiles`, `sme_pm`, `sme_shrimm4`, `sme_za_array_off1x4`, `sme_za_array_off2x2`, `sme_za_array_off2x4`, `sme_za_array_off3_0`, `sme_za_array_off3x2`, `sme_zada_2b`, `sme_zada_3b`, `sme_zdnx2`, `sme_zdnx4`, `sme_zm`, `sme_zm_index1`, `sme_zm_index2`, `sme_zm_index3_10`, `sme_zm_index3_1`, `sme_zm_index3_2`, `sme_zm_index4_10`, `sme_zm_index4_1`, `sme_zmx2`, `sme_zmx4`, `sme_znx2`, `sme_znx4`, `sme_zt0`, `sme_zt0_index`, `sme_zt0_list`, `sve_pg3`, `sve_simm6`, `sve_zd`, `sve_zm_16`, `sve_zn`, `sve_znxn` |
 | `sme_mov` | **0**/262144 | 262144/262144 | `sme_za_hv_idx_dest`, `sme_za_hv_idx_src`, `sve_pg3`, `sve_zd`, `sve_zn` |
-| `sme_psel` | **0**/131072 | 131072/131072 | `sme_pnt_wm_imm`, `sve_pnd`, `sve_png4_10` |
+| `sme_psel` | **0**/131072 | 131072/131072 | `sme_pnt_wm_imm`, `sve_pd`, `sve_pg4_10` |
 | `sme_shift` | **0**/196608 | 196608/196608 | `sme_shrimm5`, `sme_znx4`, `sve_zd` |
 | `sme_size_12_bhs` | **0**/126976 | 126976/126976 | `sme_zdnx2`, `sme_zdnx4`, `sme_zn_index2_15`, `sme_zn_index2_16`, `sme_zn_index3_14`, `sme_zn_index3_15`, `sme_zn_index4_14`, `sme_zt0`, `sve_zd` |
 | `sme_size_12_hs` | **0**/2048 | 2048/2048 | `sme_zdnx4`, `sme_zn_index1_16`, `sme_zt0` |
@@ -164,7 +164,7 @@ the operand kinds for that formatting needs to be implemented to decrease the di
 | `sve_index` | **0**/65536 | 65536/65536 | `sve_zd`, `sve_zn_index` |
 | `sve_index1` | 30720/32768 | 32768/32768 | `sve_zd`, `sve_zn_5_index` |
 | `sve_limm` | **0**/262144 | 262144/262144 | `sve_limm`, `sve_zd` |
-| `sve_misc` | 65542/16777768 | 16777767/16777768 | `sme_png3`, `sme_za_hv_idx_ldstr`, `sme_zdnx2`, `sme_zdnx4`, `sme_znx2`, `sme_znx4`, `sme_zt2`, `sme_zt3`, `sme_zt4`, `sme_ztx2_strided`, `sme_ztx4_strided`, `sve_addr_r`, `sve_addr_ri_s4x16`, `sve_addr_ri_s4x2xvl`, `sve_addr_ri_s4x32`, `sve_addr_ri_s4x3xvl`, `sve_addr_ri_s4x4xvl`, `sve_addr_ri_s4xvl`, `sve_addr_ri_s6xvl`, `sve_addr_ri_s9xvl`, `sve_addr_ri_u6`, `sve_addr_ri_u6x2`, `sve_addr_ri_u6x4`, `sve_addr_ri_u6x8`, `sve_addr_rr`, `sve_addr_rr_lsl1`, `sve_addr_rr_lsl2`, `sve_addr_rr_lsl3`, `sve_addr_rr_lsl4`, `sve_addr_rx`, `sve_addr_rx_lsl1`, `sve_addr_rx_lsl2`, `sve_addr_rx_lsl3`, `sve_addr_rz`, `sve_addr_rz_lsl1`, `sve_addr_rz_lsl2`, `sve_addr_rz_lsl3`, `sve_addr_rz_xtw1_14`, `sve_addr_rz_xtw1_22`, `sve_addr_rz_xtw2_14`, `sve_addr_rz_xtw2_22`, `sve_addr_rz_xtw3_14`, `sve_addr_rz_xtw3_22`, `sve_addr_rz_xtw_14`, `sve_addr_rz_xtw_22`, `sve_addr_zi_u5`, `sve_addr_zi_u5x2`, `sve_addr_zi_u5x4`, `sve_addr_zi_u5x8`, `sve_addr_zx`, `sve_addr_zz_sxtw`, `sve_addr_zz_uxtw`, `sve_imm_rot2`, `sve_pattern_scaled`, `sve_pd`, `sve_pg3`, `sve_pg4_10`, `sve_pg4_5`, `sve_pm`, `sve_pn`, `sve_pnd`, `sve_pnt`, `sve_prfop`, `sve_simm6`, `sve_uimm8_53`, `sve_zd`, `sve_zm3_11_index`, `sve_zm3_19_index`, `sve_zm3_22_index`, `sve_zm3_index`, `sve_zm4_11_index`, `sve_zm4_index`, `sve_zm_16`, `sve_zm_5`, `sve_zm_imm4`, `sve_zn`, `sve_znxn`, `sve_zt`, `sve_ztxn` |
+| `sve_misc` | 65542/16777768 | 16777767/16777768 | `sme_png3`, `sme_za_hv_idx_ldstr`, `sme_zdnx2`, `sme_zdnx4`, `sme_znx2`, `sme_znx4`, `sme_ztx2_strided`, `sme_ztx4_strided`, `sve_addr_ri_s4x16`, `sve_addr_ri_s4x2xvl`, `sve_addr_ri_s4x32`, `sve_addr_ri_s4x3xvl`, `sve_addr_ri_s4x4xvl`, `sve_addr_ri_s4xvl`, `sve_addr_ri_s6xvl`, `sve_addr_ri_s9xvl`, `sve_addr_ri_u6`, `sve_addr_ri_u6x2`, `sve_addr_ri_u6x4`, `sve_addr_ri_u6x8`, `sve_addr_rm`, `sve_addr_rm_lsl1`, `sve_addr_rm_lsl2`, `sve_addr_rm_lsl3`, `sve_addr_rr`, `sve_addr_rr_lsl1`, `sve_addr_rr_lsl2`, `sve_addr_rr_lsl3`, `sve_addr_rr_lsl4`, `sve_addr_rx`, `sve_addr_rx_lsl1`, `sve_addr_rx_lsl2`, `sve_addr_rx_lsl3`, `sve_addr_rx_lsl4`, `sve_addr_rz`, `sve_addr_rz_lsl1`, `sve_addr_rz_lsl2`, `sve_addr_rz_lsl3`, `sve_addr_rz_xtw1_14`, `sve_addr_rz_xtw1_22`, `sve_addr_rz_xtw2_14`, `sve_addr_rz_xtw2_22`, `sve_addr_rz_xtw3_14`, `sve_addr_rz_xtw3_22`, `sve_addr_rz_xtw_14`, `sve_addr_rz_xtw_22`, `sve_addr_zi_u5`, `sve_addr_zi_u5x2`, `sve_addr_zi_u5x4`, `sve_addr_zi_u5x8`, `sve_addr_zx`, `sve_addr_zz_sxtw`, `sve_addr_zz_uxtw`, `sve_imm_rot2`, `sve_pattern_scaled`, `sve_pd`, `sve_pg3`, `sve_pg4_10`, `sve_pg4_5`, `sve_pm`, `sve_pn`, `sve_prfop`, `sve_pt`, `sve_simm6`, `sve_uimm4`, `sve_uimm8_53`, `sve_zd`, `sve_zm3_11_index`, `sve_zm3_19_index`, `sve_zm3_22_index`, `sve_zm3_index`, `sve_zm4_11_index`, `sve_zm4_index`, `sve_zm_16`, `sve_zm_5`, `sve_zn`, `sve_znxn`, `sve_zt`, `sve_ztxn` |
 | `sve_movprfx` | **0**/65536 | 65536/65536 | `sve_pg3`, `sve_zd`, `sve_zn` |
 | `sve_pred_zm` | **0**/16384 | 16384/16384 | `sve_pd`, `sve_pg4_10`, `sve_pn` |
 | `sve_shift_pred` | **0**/294912 | 294912/294912 | `sve_pg3`, `sve_shlimm_pred`, `sve_shrimm_pred`, `sve_zd` |
